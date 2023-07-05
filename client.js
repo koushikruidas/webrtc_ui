@@ -232,4 +232,6 @@ function isJSON(message) {
 
 function closeChannel(){
     dataChannel.close();
+    conn.close();
+    location.reload();
 }

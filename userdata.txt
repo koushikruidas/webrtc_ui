@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Install node & express
+sudo yum update -y
+sudo yum install -y nodejs
+npm install express
+
+# Clone project
+sudo yum install -y git
+git clone https://github.com/koushikruidas/webrtc_ui.git
+
+# got to root directory
+cd webrtc_ui
+
+# Run the application
+node server.js
