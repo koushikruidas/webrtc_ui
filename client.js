@@ -23,6 +23,9 @@ conn.onmessage = function(msg) {
     case "candidate":
         handleCandidate(data);
         break;
+    case "close":
+        closeChannelForRemote();
+        break;
     default:
         break;
     }
@@ -231,6 +234,17 @@ function isJSON(message) {
 }
 
 function closeChannel(){
+    send({
+              event : "close",
+              data : ''
+          });
+    dataChannel.close();
+    conn.close();
+    send
+    location.reload();
+}
+
+function closeChannelForRemote(){
     dataChannel.close();
     conn.close();
     location.reload();
